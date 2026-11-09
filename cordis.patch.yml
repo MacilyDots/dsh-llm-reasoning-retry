@@ -1,0 +1,12 @@
+# dsh-llm-reasoning-retry bundle patch: one insert row activating the plugin.
+#
+# 默认配置写在 lib/index.js 的 DEFAULT_CONFIG：
+#   enabled: true, mode: "retry", maxRetries: 1, maxBufferChars: 8192
+# 要改就在 profile 的 cordis.patch.yml 里按 id `llm-reasoning-retry` 覆盖，例如：
+#   - id: llm-reasoning-retry
+#     config:
+#       mode: log
+#       maxRetries: 1
+- insert:
+    - id: llm-reasoning-retry
+      name: 'dsh-llm-reasoning-retry'
